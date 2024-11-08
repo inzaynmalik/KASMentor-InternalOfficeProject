@@ -1,13 +1,9 @@
 import { createRouter, createWebHistory } from "vue-router";
-
 import Login from "./pages/Login.vue";
 import Home from "./pages/Home.vue";
 import User from "./pages/User.vue";
 import timepass from "./pages/timepass.vue";
-import Student from "./pages/Student.vue";
-import AppSideBar from "./components/AppSideBar.vue";
-import SideBar from "./components/SideBar.vue";
-// import RightSideBatches from "./components/RightSideBatches.vue";
+import Students from "./pages/Students.vue";
 
 const router = createRouter({
 	history: createWebHistory(),
@@ -17,21 +13,25 @@ const router = createRouter({
 			name: "Login",
 			component: Login,
 		},
-
 		{
 			path: "/home",
-			name: "Home",
 			component: Home,
 			children: [
 				{
 					path: "batches",
 					name: "Batches",
-					component: () => import("./components/AllBatches.vue"), // load component dynamically
+					component: () => import("./components/AllBatches.vue"),
+				},
+				{
+					path: "batches/:batchName",
+					name: "BatchDetail",
+					component: Students,
+					props: (route) => ({ batchData: route.params.batchData }),
 				},
 				{
 					path: "students",
-					name: "Students",
-					component: () => import("./components/AllStudents.vue"), // same component, different data
+					name: "AllStudents",
+					component: () => import("./components/AllStudents.vue"),
 				},
 			],
 		},
@@ -40,11 +40,6 @@ const router = createRouter({
 			name: "User",
 			component: User,
 			props: true,
-		},
-		{
-			path: "/student",
-			name: "Student",
-			component: Student,
 		},
 		{
 			path: "/timepass",

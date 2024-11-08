@@ -2,7 +2,6 @@
 import { ref, h } from "vue"; // Import h from vue
 import { ListView, Avatar } from "frappe-ui";
 
-// Student data
 const studentData = ref([
 	{
 		id: 1,
@@ -45,7 +44,7 @@ const getAvatar = (row) => {
 						key: 'name',
 						width: 3,
 						getLabel: ({ row }) => row.name,
-						prefix: ({ row }) => getAvatar(row), // Use the function from the script
+						prefix: ({ row }) => getAvatar(row),
 					},
 					{
 						label: 'Email',

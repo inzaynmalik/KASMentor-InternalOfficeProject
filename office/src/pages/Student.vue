@@ -1,6 +1,6 @@
-<script>
-import RightSideStudents from "../components/RightSideStudents.vue";
-import LeftSideStudents from "../components/LeftSideStudents.vue";
+<!-- <script>
+import RightSideStudents from "../../not/RightSideStudents.vue";
+import LeftSideStudents from "../../not/LeftSideStudents.vue";
 
 export default {
 	components: {
@@ -8,13 +8,14 @@ export default {
 		RightSideStudents,
 	},
 };
-</script>
+</script> -->
 
 <template>
-	<div class="flex min-h-screen">
+	<!-- <div class="flex min-h-screen">
 		<LeftSideStudents />
 		<RightSideStudents />
-	</div>
+	</div> -->
+	<h1>he</h1>
 </template>
 <style scoped>
 .min-h-screen {

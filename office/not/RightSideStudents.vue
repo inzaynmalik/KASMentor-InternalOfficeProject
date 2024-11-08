@@ -1,7 +1,7 @@
 <script>
 import { TextInput, FormControl, Tabs } from "frappe-ui";
-import StudentInfo from "@/components/StudentDetails.vue";
-import EnrollmentDetails from "@/components/EnrollmentDetails.vue";
+import StudentInfo from "../../not/StudentDetails.vue";
+import EnrollmentDetails from "../../not/EnrollmentDetails.vue";
 
 export default {
 	components: {

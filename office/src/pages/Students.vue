@@ -1,11 +1,27 @@
 <template>
 	<div class="flex flex-col w-full">
 		<div class="flex items-center justify-between h-10 px-4">
-			<h1 class="font-bold">Batches</h1>
+			<Story :layout="{ type: 'grid', width: 500 }">
+				<Variant title="With onClick option">
+					<Breadcrumbs
+						:items="[
+							{
+								label: 'Batches',
+								onClick: navigateToBatches, // Set onClick function for navigation
+							},
+							{
+								label: batchName,
+								// onClick: () => logEvent('onClick', 'Batch Detail'),
+							},
+						]"
+					/>
+				</Variant>
+			</Story>
 		</div>
 		<hr style="border: none; border-top: 1px solid #efefef" />
 
 		<div class="w-full bg-white px-4 mt-5">
+			<!-- Display batch name dynamically -->
 			<ListView
 				:columns="[
 					{
@@ -37,7 +53,7 @@
 				]"
 				:rows="batchData"
 				:options="{
-					getRowRoute: (row) => ({ name: 'BatchDetail', params: { batchName: row.name } }),
+					getRowRoute: (row) => ({ name: 'User', params: { userId: row.id } }),
 					selectable: true,
 					showTooltip: true,
 					resizeColumn: true,
@@ -49,13 +65,25 @@
 </template>
 
 <script setup>
+import { Breadcrumbs } from "frappe-ui";
 import { ref, h } from "vue";
 import { ListView, Avatar } from "frappe-ui";
+import { useRoute, useRouter } from "vue-router"; // Import useRouter
 
+const route = useRoute();
+const router = useRouter(); // Initialize router
+const batchName = route.params.batchName; // Get batch name from route params
+
+// Define a function to navigate to home/batches
+const navigateToBatches = () => {
+	router.push({ path: "/home/batches" });
+};
+
+// Sample data
 const batchData = ref([
 	{
 		id: 1,
-		name: "batch1",
+		name: "Student1",
 		email: "john@doe.com",
 		status: "Active",
 		role: "Developer",
@@ -63,7 +91,7 @@ const batchData = ref([
 	},
 	{
 		id: 2,
-		name: "batch2",
+		name: "Student2",
 		email: "jane@doe.com",
 		status: "Inactive",
 		role: "HR",
