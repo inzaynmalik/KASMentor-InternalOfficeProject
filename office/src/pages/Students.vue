@@ -7,7 +7,7 @@
 						:items="[
 							{
 								label: 'Batches',
-								onClick: navigateToBatches, // Set onClick function for navigation
+								onClick: navigateToBatches, 
 							},
 							{
 								label: batchName,
@@ -68,18 +68,16 @@
 import { Breadcrumbs } from "frappe-ui";
 import { ref, h } from "vue";
 import { ListView, Avatar } from "frappe-ui";
-import { useRoute, useRouter } from "vue-router"; // Import useRouter
+import { useRoute, useRouter } from "vue-router"; 
 
 const route = useRoute();
-const router = useRouter(); // Initialize router
-const batchName = route.params.batchName; // Get batch name from route params
+const router = useRouter(); 
+const batchName = route.params.batchName; 
 
-// Define a function to navigate to home/batches
 const navigateToBatches = () => {
 	router.push({ path: "/home/batches" });
 };
 
-// Sample data
 const batchData = ref([
 	{
 		id: 1,

@@ -2,7 +2,6 @@ import { createRouter, createWebHistory } from "vue-router";
 import Login from "./pages/Login.vue";
 import Home from "./pages/Home.vue";
 import User from "./pages/User.vue";
-import timepass from "./pages/timepass.vue";
 import Students from "./pages/Students.vue";
 
 const router = createRouter({
@@ -40,11 +39,6 @@ const router = createRouter({
 			name: "User",
 			component: User,
 			props: true,
-		},
-		{
-			path: "/timepass",
-			name: "timepass",
-			component: timepass,
 		},
 	],
 });

@@ -5,7 +5,7 @@ import { ref } from "vue";
 export default {
 	components: {
 		TextInput,
-		FormControl, // Register TextInput component
+		FormControl,
 	},
 	data() {
 		return {};
@@ -14,40 +14,10 @@ export default {
 </script>
 
 <template>
-	<div class="profile-container flex items-center p-4 border-b border-gray-300">
-		<div class="flex flex-row mr-auto">
-			<div class="avatar w-16 h-16">
-				<img class="rounded-full" src="@/assets/images/logo.png" alt="User Avatar" />
-			</div>
-
-			<div class="ml-4 flex-1">
-				<h2 class="text-xl font-semibold">
-					Arsalan Patel, <span class="italic">ID-200</span>
-				</h2>
-				<p class="text-sm text-gray-500">Batch 1 - KAS</p>
-				<p class="text-sm text-gray-400">arsalanpatel71@gmail.com</p>
-			</div>
-		</div>
-
-		<div class="flex space-x-4">
-			<div class="flex items-center space-x-1">
-				<span class="text-teal-500 font-semibold">Student Details</span>
-			</div>
-
-			<div class="flex items-center space-x-1">
-				<span class="text-red-500 font-semibold">Enrollment Data</span>
-			</div>
-
-			<div class="flex items-center space-x-1">
-				<span class="text-yellow-500 font-semibold">Report Data</span>
-			</div>
-		</div>
-	</div>
-
-	<!-- <div class="form-parent">
-		<div class="form-section p-4 border border-red-600">
-			<div class="grid grid-cols-3 gap-4">
-				<div class="p-2">
+	<div class="form-parent">
+		<div class="form-section ">
+			<div class="grid grid-cols-3 gap-4 mt-4">
+				<div class="">
 					<FormControl
 						:type="'text'"
 						:ref_for="true"
@@ -59,7 +29,7 @@ export default {
 					/>
 				</div>
 
-				<div class="p-2">
+				<div class="">
 					<FormControl
 						:type="'text'"
 						:ref_for="true"
@@ -70,7 +40,7 @@ export default {
 						label="Last Name"
 					/>
 				</div>
-				<div class="p-2">
+				<div class="">
 					<FormControl
 						:type="'text'"
 						:ref_for="true"
@@ -84,7 +54,7 @@ export default {
 			</div>
 
 			<div class="grid grid-cols-3 gap-4 mt-4">
-				<div class="p-2">
+				<div class="">
 					<FormControl
 						:type="'text'"
 						:ref_for="true"
@@ -96,7 +66,7 @@ export default {
 					/>
 				</div>
 
-				<div class="p-2">
+				<div class="">
 					<FormControl
 						:type="'text'"
 						:ref_for="true"
@@ -107,7 +77,7 @@ export default {
 						label="Blood Group"
 					/>
 				</div>
-				<div class="p-2">
+				<div class="">
 					<FormControl
 						:type="'date'"
 						:ref_for="true"
@@ -121,7 +91,7 @@ export default {
 				</div>
 			</div>
 		</div>
-	</div> -->
+	</div>
 </template>
 
 <style scoped>
@@ -143,16 +113,13 @@ export default {
 }
 
 .form-section {
-	background-color: #f9f9f9;
+	/* background-color:; */
 	border-radius: 8px;
 	padding: 16px;
 }
 
-.form-parent {
-}
-
 label {
 	font-family: "Inter", sans-serif;
-	color: #4a5568;
+	color: red;
 }
 </style>
